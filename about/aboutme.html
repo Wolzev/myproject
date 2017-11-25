@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>About Me</title>
-		<meta charset="utf-8" />
-	</head>
-	<body>
-		<a href="../index.html">Relative reference to Index</a>
-		<br>
-		<a href="https://github.com/Wolzev/myproject/blob/master/index.html">Absolute reference to Index</a>
-	</body>
-</html>
+{% extends "base.html" %}
+{% block title %}Aboutme{% endblock %}
+{% block head %}
+    {% for i in css1 %}
+    <link rel="stylesheet" href="/_static/{{ i }}"/>
+    {% endfor %}
+{% endblock %}
+{% block content %}
+    <h1>Index</h1>
+    <p class="important">
+    {% for j in js1 %}
+         <script src="/_static/{{ j }}></script>
+    {% endfor %}
+    </p>
+{% endblock %}
